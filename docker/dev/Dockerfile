@@ -1,11 +1,11 @@
 # Use the official Node.js image as our base
 FROM node:18
 
-# Set the working directory inside the container
-WORKDIR /usr/src/app
-
 # Copy package.json and package-lock.json first to leverage Docker cache
 COPY package*.json ./
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
 # Install app dependencies
 RUN npm install
